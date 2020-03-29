@@ -12,8 +12,9 @@ A live working demo of our project is shown below:
 
 ![received_540673266585886](https://user-images.githubusercontent.com/20079387/77853640-0da19780-71b3-11ea-8bc7-f7a2539ccef5.gif)
 
-After getting all the information,the chatbot sends a text message to the user with 3 restuarants based on his suggestion
-![20200327_005411](https://user-images.githubusercontent.com/20079387/77853633-011d3f00-71b3-11ea-997c-3ddc1f5ef621.jpg)
+After getting all the information,the chatbot sends a text message to the user with 3 restuarants based on his suggestion: 
+
+![20200327_005411](https://user-images.githubusercontent.com/20079387/77853920-fa8fc700-71b4-11ea-85ce-d40a794cdeca.jpg)
 
 ## Architecture
 The architecture of our project is as follows: 
