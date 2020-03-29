@@ -1,0 +1,105 @@
+openapi: 3.0.0
+info:
+  title: AI Customer Service API
+  description: 'AI Customer Service application, built during the Cloud and Big Data course at Columbia University.'
+  version: 1.0.0
+  contact:
+    name: Raghav
+    email: rj2571@columbia.edu
+servers:
+  - url: /v1
+# each indentation in yaml is a new level
+# one indent is 2 spaces. outer most indent 
+# contains the levels under it.
+
+# key : value
+# for multiple paths: use a list of hyphens
+# paths: 
+#   - /chatbot: 
+#         post: 
+#   - /anotha_one:
+#         post:
+paths:
+  /chatbot:
+    post:
+      operationId: sendMessage
+      summary: The endpoint for the Natural Language Understanding API.
+      requestBody:
+        description: |
+          This API takes in one or more messages from the client and returns
+          one or more messages as a response. The API leverages the NLP
+          backend functionality, paired with state and profile information
+          and returns a context-aware reply.
+        required: true
+        content: 
+          application/json: 
+            schema: 
+              $ref: '#/components/schemas/BotRequest'
+            example:
+              messages: 
+                - type: message
+                  unstructured: 
+                    id: 123
+                    text: Hi
+                    timestamp: 2017-07-21T17:32:28Z
+      responses:
+        '200':
+          description: Voila! A Chatbot response
+          content:
+            application/json: 
+              schema:
+                $ref: '#/components/schemas/BotResponse'
+        '403':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    BotRequest:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'
+    BotResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/Message'
+    Message:
+      type: object
+      properties:
+        type:
+          type: string
+        unstructured:
+          $ref: '#/components/schemas/UnstructuredMessage'
+    UnstructuredMessage:
+      type: object
+      properties:
+        id:
+          type: string
+        text:
+          type: string
+        timestamp:
+          type: string
+          format: datetime
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+
