@@ -1,6 +1,6 @@
 # Introduction
 
-**Note: this repository is a copy of our private repository which was maintained by me and coauthors: [@poyuH](https://github.com/poyuH), [@Jefflin413](https://github.com/Jefflin413). We had to create a new repsotiory since a lot of our API Keys and URLs were already commited and hardcoded in it.**
+**Note: this repository is a copy of our private repository which was maintained by me and coauthors: [@poyuH](https://github.com/poyuH), [@Raghav](https://github.com/ragvri). We had to create a new repsotiory since a lot of our API Keys and URLs were already commited and hardcoded in it.**
 
 We build a Dining Concierge chatbot, that sends you restaurant suggestions given a set of preferences that you provide the chatbot with through conversation.
 
